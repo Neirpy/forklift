@@ -18,6 +18,8 @@ var consigne_text : Array[String] = [
 @onready var mat: MeshInstance3D = $Mat
 @onready var volant: MeshInstance3D = $fokrlift/Volant
 @onready var honk: AudioStreamPlayer = $Honk
+@onready var start_timer: Timer = $StartTimer
+@onready var start: AudioStreamPlayer = $Start
 
 @onready var wait_consigne: Timer = $WaitConsigne
 
@@ -57,6 +59,7 @@ var nom_fich
 var start_act : bool = false
 var wait_act : bool = false
 var can_drive : bool = false
+var pressed_to_start : bool = false
 
 func _ready():
 	init_transform = car.global_transform
@@ -167,7 +170,11 @@ func process_accel(_delta):
 	var forward_input = Input.is_action_pressed("forward")
 	var backward_input = Input.is_action_pressed("backward")
 	
-	
+	if (wait_act and !pressed_to_start and !can_drive and start_timer.is_stopped()) and (forward_input or backward_input):
+		pressed_to_start = true
+		start_timer.start()
+		start.play()
+
 	# LIMITEUR DE VITESSE
 	if speed_kmH >= MAX_SPEED_KMH and forward_input:
 		engine_force = 0
@@ -255,5 +262,9 @@ func stop_timer():
 
 func _on_wait_consigne_timeout() -> void:
 	wait_act = true
+	pass # Replace with function body.
+
+
+func _on_start_timer_timeout() -> void:
 	can_drive = true
 	pass # Replace with function body.

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gdbgqbpixa0y" path="res://addons/forklift-low-poly/fokrlift.glb" id="2_qs56r"]
 [ext_resource type="Texture2D" uid="uid://b762vxq3bp8ny" path="res://addons/forklift-low-poly/fokrlift_Loader_car_Material_Base_Color.png" id="2_w7ehk"]
 [ext_resource type="AudioStream" uid="uid://cnfc0rxrgqvns" path="res://assets/sounds/honk.mp3" id="4_w7ehk"]
+[ext_resource type="AudioStream" uid="uid://da6vuxyyvah3k" path="res://assets/sounds/countdown.mp3" id="5_js5kl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0bmf"]
 resource_name = "Loader_car_Material"
@@ -409,9 +410,15 @@ wait_time = 3.0
 stream = ExtResource("4_w7ehk")
 
 [node name="Start" type="AudioStreamPlayer" parent="." index="19" unique_id=68620590]
+stream = ExtResource("5_js5kl")
+
+[node name="StartTimer" type="Timer" parent="." index="20" unique_id=1303076813]
+process_callback = 0
+wait_time = 3.6
 
 [connection signal="body_entered" from="Mat/Fourche/AreaDetectPalette" to="." method="_on_area_detect_palette_body_entered"]
 [connection signal="body_exited" from="Mat/Fourche/AreaDetectPalette" to="." method="_on_area_detect_palette_body_exited"]
 [connection signal="timeout" from="WaitConsigne" to="." method="_on_wait_consigne_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 
 [editable path="fokrlift"]
