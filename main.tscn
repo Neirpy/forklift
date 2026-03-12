@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://drku7kbxg4tyk"]
+
+[ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_0xm2m"]
+[ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://gdbgqbpixa0y" path="res://addons/forklift-low-poly/fokrlift.glb" id="3_h2yge"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=467859220]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=66819070]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1732770900]
+transform = Transform3D(0.89725834, 0.4007892, -0.18519057, 0, 0.41945207, 0.9077775, 0.441506, -0.81451094, 0.3763568, 0, 39.7, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=246425438]
+transform = Transform3D(-0.0792836, -0.7140136, 0.69562835, -0.018091427, 0.6987407, 0.7151463, -0.996688, 0.044114456, -0.0683162, 16.550001, 19.15, -1.5500002)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1949763296]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2132244999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7499995, 0, -1.5500002)
+use_collision = true
+size = Vector3(30, 1, 30)
+material = ExtResource("1_0xm2m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1986822784]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -17.25, 3.4499996, -1.5500002)
+size = Vector3(1, 5.9, 30)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=599193716]
+transform = Transform3D(-1.0331603e-07, 0, 1, 0, 1, 0, -1, 0, -1.0331603e-07, -2.7499998, 3.4499996, -16.05)
+size = Vector3(1, 5.9, 30)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1827562661]
+transform = Transform3D(-1.0331603e-07, 0, 1, 0, 1, 0, -1, 0, -1.0331603e-07, -2.7499998, 3.4499996, 12.950001)
+size = Vector3(1, 5.9, 30)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=400987983]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, 11.75, 3.4499996, -1.5500002)
+size = Vector3(1, 5.9, 30)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1251542521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7000003, 1.0000001, -8.8)
+size = Vector3(20, 1, 1)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=311397351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2999997, 1.0000001, -0.6000004)
+size = Vector3(20, 1, 1)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1480653058]
+transform = Transform3D(0.98480785, 0, 0.17364816, 0, 1, 0, -0.17364816, 0, 0.98480785, -7.500001, 1.0000001, -6.8)
+size = Vector3(20, 1, 1)
+material = ExtResource("2_h2yge")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1901079218]
+transform = Transform3D(0.98480785, 0, 0.17364816, 0, 1, 0, -0.17364816, 0, 0.98480785, -7.500001, 1.0000001, 5.8)
+size = Vector3(20, 1, 1)
+material = ExtResource("2_h2yge")
+
+[node name="fokrlift" parent="." unique_id=447234053 instance=ExtResource("3_h2yge")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 0.5, -12.2)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://17s3bomeo3nr"
-path="res://.godot/imported/pallet.blend-74d537b1124da0efa37655ddb38720d6.scn"
+uid="uid://jbouls5xk0t7"
+path="res://.godot/imported/Road013A_1K-JPG.blend-b7c0c392868706e1404d5464c2a62394.scn"
 
 [deps]
 
-source_file="res://addons/amc-popcorn-pallet/pallet.blend"
-dest_files=["res://.godot/imported/pallet.blend-74d537b1124da0efa37655ddb38720d6.scn"]
+source_file="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.blend"
+dest_files=["res://.godot/imported/Road013A_1K-JPG.blend-b7c0c392868706e1404d5464c2a62394.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.6
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d0q5va4rkb5mx"]
+
+[ext_resource type="PackedScene" uid="uid://17s3bomeo3nr" path="res://addons/amc-popcorn-pallet/pallet.blend" id="1_r8q5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8q5o"]
+size = Vector3(1.2, 1.1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svtij"]
+size = Vector3(0.11923828, 0.1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipn1s"]
+size = Vector3(0.12232666, 0.1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubkpa"]
+size = Vector3(0.12116699, 0.1, 1.2)
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1648393257]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=390798216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100000024, 0.65, 0.19999997)
+shape = SubResource("BoxShape3D_r8q5o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=320561297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4471191, 0.050000012, 0.20000002)
+shape = SubResource("BoxShape3D_svtij")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1212597599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09559942, 0.050000012, 0.20000002)
+shape = SubResource("BoxShape3D_ipn1s")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1838116116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63543046, 0.050000012, 0.20000002)
+shape = SubResource("BoxShape3D_ubkpa")
+
+[node name="pallet" parent="." unique_id=1532607627 instance=ExtResource("1_r8q5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.20000005)

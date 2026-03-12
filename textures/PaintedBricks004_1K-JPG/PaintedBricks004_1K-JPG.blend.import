@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://17s3bomeo3nr"
-path="res://.godot/imported/pallet.blend-74d537b1124da0efa37655ddb38720d6.scn"
+uid="uid://cyol2mb3qv573"
+path="res://.godot/imported/PaintedBricks004_1K-JPG.blend-cd25aae0e2e019ba2756ca2ab7f853f0.scn"
 
 [deps]
 
-source_file="res://addons/amc-popcorn-pallet/pallet.blend"
-dest_files=["res://.godot/imported/pallet.blend-74d537b1124da0efa37655ddb38720d6.scn"]
+source_file="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.blend"
+dest_files=["res://.godot/imported/PaintedBricks004_1K-JPG.blend-cd25aae0e2e019ba2756ca2ab7f853f0.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.6
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
