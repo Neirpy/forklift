@@ -1,6 +1,9 @@
 extends VehicleBody3D
 class_name BaseCar
 
+#emoji médailles 
+# 🥇 🥈 🥉
+
 @onready var car: BaseCar = $"."
 @onready var fourche: MeshInstance3D = $Mat/Fourche
 @onready var mat: MeshInstance3D = $Mat

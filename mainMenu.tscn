@@ -19,7 +19,10 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="main3" type="Node3D" unique_id=1402467325]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wked4"]
+viewport_path = NodePath("SubViewport")
+
+[node name="mainMenu" type="Node3D" unique_id=1402467325]
 script = ExtResource("1_wked4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=431984031]
@@ -29,8 +32,26 @@ environment = SubResource("Environment_tj0cy")
 transform = Transform3D(0.89725834, 0.4007892, -0.18519057, 0, 0.41945207, 0.9077775, 0.441506, -0.81451094, 0.3763568, 0, 39.7, 0)
 shadow_enabled = true
 
-[node name="car" parent="." unique_id=1600336564 instance=ExtResource("3_wked4")]
+[node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_wked4")]
 transform = Transform3D(-1.5893256e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -1.5893256e-08, 17.2, 0.5000002, -3.2000017)
+
+[node name="MatCollision" parent="forklift" index="7" unique_id=235551822]
+transform = Transform3D(-0.99999976, 0, -8.742274e-08, 0, 1, 0, 8.742274e-08, 0, -0.99999976, 0, 1.0654109, -0.5013275)
+
+[node name="CollisionFourcheDroite" parent="forklift" index="8" unique_id=799407670]
+transform = Transform3D(-0.9999995, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.9999995, 0.2501104, 0.03857082, -1.4398947)
+
+[node name="CollisionFourcheGauche" parent="forklift" index="9" unique_id=321943223]
+transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, -0.24664664, 0.037264585, -1.4398956)
+
+[node name="CollisionFourcheStruct" parent="forklift" index="10" unique_id=1405214534]
+transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, 0, 0.5372477, -0.8629799)
+
+[node name="Camera3D2" parent="forklift/SubViewport" parent_id_path=PackedInt32Array(1600336564, 79165641) index="0" unique_id=1337575932]
+transform = Transform3D(0.26638022, 0.21127892, -0.940426, 1.9162991e-08, 0.9756801, 0.2191991, 0.9638672, -0.05839036, 0.2599019, 17.438862, 2.423236, -2.9053714)
+
+[node name="Sprite3D" parent="forklift" index="12" unique_id=1217210079]
+texture = SubResource("ViewportTexture_wked4")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1507288]
 use_collision = true
@@ -90,3 +111,13 @@ text = "Niveau 3 :
 Déplacement
 de charge sur
 un parcours"
+
+[node name="AffichageScore" type="Label3D" parent="." unique_id=562022776]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.159351, 4.136052, -2.2088976)
+pixel_size = 0.001
+billboard = 2
+font_size = 750
+outline_size = 127
+
+[editable path="forklift"]
+[editable path="forklift/fokrlift"]

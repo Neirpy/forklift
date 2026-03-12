@@ -366,22 +366,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.668607, 0.62655)
 [node name="fokrlift" parent="." index="15" unique_id=1389712084 instance=ExtResource("2_qs56r")]
 transform = Transform3D(-0.99999994, 0, 1.5099579e-07, 0, 1, 0, -1.5099579e-07, 0, -0.99999994, 0, 0, 0)
 
-[node name="Fourche" parent="fokrlift" index="1" unique_id=977168196]
+[node name="Fourche" parent="fokrlift" index="1" unique_id=508709317]
 visible = false
 
-[node name="Mat" parent="fokrlift" index="2" unique_id=294730539]
+[node name="Mat" parent="fokrlift" index="2" unique_id=822186132]
 visible = false
 
-[node name="RoueAvantGauche" parent="fokrlift" index="3" unique_id=604475746]
+[node name="RoueAvantGauche" parent="fokrlift" index="3" unique_id=1484462794]
 visible = false
 
-[node name="RoueArriereGauche" parent="fokrlift" index="4" unique_id=79381530]
+[node name="RoueArriereGauche" parent="fokrlift" index="4" unique_id=1914971808]
 visible = false
 
-[node name="RoueArriereDroit" parent="fokrlift" index="5" unique_id=374110934]
+[node name="RoueArriereDroit" parent="fokrlift" index="5" unique_id=181903703]
 visible = false
 
-[node name="RoueAvantDroite" parent="fokrlift" index="8" unique_id=355615896]
+[node name="RoueAvantDroite" parent="fokrlift" index="8" unique_id=234809183]
 visible = false
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="." index="16" unique_id=410416497]
@@ -391,6 +391,14 @@ remote_path = NodePath("../SubViewport/Camera3D2")
 [node name="Label" parent="Hud" parent_id_path=PackedInt32Array(413007189) index="1" unique_id=194659142]
 text = "
 "
+
+[node name="Medailles" type="Label" parent="Hud" parent_id_path=PackedInt32Array(413007189) index="2" unique_id=747980764]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Niveau1 : Aucune
+Niveau2 : Aucune
+Niveau3 : Aucune"
 
 [connection signal="timeout" from="Chronometre" to="." method="_on_chronometre_timeout"]
 [connection signal="body_entered" from="Mat/Fourche/AreaDetectPalette" to="." method="_on_area_detect_palette_body_entered"]
