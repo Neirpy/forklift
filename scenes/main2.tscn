@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cx5tqs84qhgel"]
 
 [ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_dmrlw"]
+[ext_resource type="Script" uid="uid://crprymvsl5n88" path="res://scenes/main_2.gd" id="1_xlafv"]
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_8ce7h"]
 [ext_resource type="PackedScene" uid="uid://bxxt62sny47uw" path="res://addons/forklift.tscn" id="3_3yxjw"]
-[ext_resource type="PackedScene" uid="uid://d0q5va4rkb5mx" path="res://scenes/pallet.tscn" id="4_3yxjw"]
+[ext_resource type="PackedScene" uid="uid://d0q5va4rkb5mx" path="res://addons/pallet.tscn" id="4_3yxjw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,6 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=467859220]
+script = ExtResource("1_xlafv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=66819070]
 environment = SubResource("Environment_0xm2m")

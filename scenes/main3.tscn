@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://xbsraav20fjs"]
+[gd_scene format=3 uid="uid://b86ptm46k3xhe"]
 
+[ext_resource type="Script" uid="uid://cxplyt1kro1xr" path="res://scenes/main_3.gd" id="1_kavpc"]
 [ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_vok63"]
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_0glbh"]
 [ext_resource type="Material" path="res://textures/Bricks066_1K-JPG/Bricks066_1K-JPG.tres" id="3_0glbh"]
@@ -19,6 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="main3" type="Node3D" unique_id=1402467325]
+script = ExtResource("1_kavpc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=431984031]
 environment = SubResource("Environment_tj0cy")
