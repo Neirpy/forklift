@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://8sl5gmdd6o6w"]
-
-[node name="Camera3D" type="Camera3D" unique_id=684140904]
-top_level = true
-current = true
