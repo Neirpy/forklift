@@ -4,6 +4,7 @@ class_name BaseCar
 @onready var car: BaseCar = $"."
 @onready var fourche: MeshInstance3D = $Mat/Fourche
 @onready var mat: MeshInstance3D = $Mat
+@onready var volant: MeshInstance3D = $fokrlift/Volant
 
 @onready var speed_label: Label = $Hud/speed
 @onready var label: Label = $Hud/Label
@@ -20,7 +21,7 @@ var speed_kmH : float
 var steer_target = 0
 
 var min_height_fork : float = 0.0
-var max_height_fork : float = 175.0
+var max_height_fork : float = 1.70
 
 var min_angle_mat : float = -0.18
 var max_angle_mat :float = 0.0
@@ -30,10 +31,10 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_pressed("fork_up"):
-		fourche.position.y += 10.0 * delta
+		fourche.position.y += .25 * delta
 		fourche.position.y = clampf(fourche.position.y, min_height_fork, max_height_fork)
 	if Input.is_action_pressed("fork_down"):
-		fourche.position.y -= 10.0 * delta
+		fourche.position.y -= .25 * delta
 		fourche.position.y = clampf(fourche.position.y, min_height_fork, max_height_fork)
 	if Input.is_action_pressed("tilt_in"):
 		mat.rotation.x += .1 * delta
