@@ -8,7 +8,8 @@ var liste_medals_act : Array[String] = []
 
 @onready var consigne: Label = $Hud/Consigne
 var consigne_text : Array[String] = [
-	"Regarde autour de toi, \n il faut que tu ailles dans la zone d'arrivée \n le plus rapidement possible. \n Appuie sur accélérer pour commencer."
+	"Regarde autour de toi, \n il faut que tu ailles dans la zone d'arrivée \n le plus rapidement possible. \n Appuie sur accélérer pour commencer.",
+	"Déplacer les 4 palettes (boutons Y et A)\nsur les 4 emplacements (jaunes)\nle plus rapidement possible.\nUne fois les palettes déplacées,\nil faut aller dans la zone verte."
 ]
 
 @onready var car: BaseCar = $"."
@@ -16,9 +17,6 @@ var consigne_text : Array[String] = [
 @onready var mat: MeshInstance3D = $Mat
 @onready var volant: MeshInstance3D = $fokrlift/Volant
 
-
-
-@onready var chronometre: Timer = $Chronometre
 @onready var wait_consigne: Timer = $WaitConsigne
 
 #camera
@@ -58,7 +56,6 @@ var start_act : bool = false
 var wait_act : bool = false
 var can_drive : bool = false
 
-
 func _ready():
 	init_transform = car.global_transform
 	path = get_tree().current_scene.scene_file_path
@@ -68,13 +65,17 @@ func _ready():
 		consigne.text = consigne_text[0]
 		wait_consigne.start()
 		can_drive = false
+	if nom_fich == "main2":
+		consigne.text = consigne_text[1]
+		wait_consigne.start()
+		can_drive = false
 
 
 # Nouvelle fonction pour gérer les seuils de médailles
-func update_label_color():
-	if time_elapsed < 30.0:
+func update_label_color(gold: int, silver: int):
+	if time_elapsed < gold:
 		label.label_settings.font_color = Color.GOLD
-	elif time_elapsed < 45.0:
+	elif time_elapsed < silver:
 		label.label_settings.font_color = Color.SILVER
 	else:
 		label.label_settings.font_color = Color.SADDLE_BROWN # Bronze
@@ -102,10 +103,19 @@ func _physics_process(delta):
 	
 	speed_label.text = str(round(speed_kmH)) + " Km/h"
 	
+	var silver_timer : int = 0
+	var gold_timer : int = 0
+	
 	if is_timer_active:
 		time_elapsed += delta
 		label.text = format_time(time_elapsed)
-		update_label_color()
+		if nom_fich == "main1":
+			silver_timer = 45 # 45 sec.
+			gold_timer = 30 # 30 sec
+		if nom_fich == "main2":
+			silver_timer = 330 # 5 min. 30 sec.
+			gold_timer = 250 # 4 min. 10 sec.
+		update_label_color(gold_timer, silver_timer)
 
 func handle_camera_look(delta: float):
 	# Récupérer les deux axes du stick droit d'un coup
@@ -200,7 +210,6 @@ func _input(event):
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 
-
 func _on_area_detect_palette_body_entered(body: Node3D) -> void:
 # On vérifie si le nom du body contient "pallet" (en minuscules pour éviter les erreurs)
 	if body.name.to_lower().contains("pallet"):
@@ -209,10 +218,9 @@ func _on_area_detect_palette_body_entered(body: Node3D) -> void:
 	else:
 		print("Objet ignoré : ", body.name)
 
-
 func _on_area_detect_palette_body_exited(body: Node3D) -> void:
 	if body.name.to_lower().contains("pallet"):
-		print("Palette déposé : ", body.name)
+		print("Palette déposée : ", body.name)
 		# Ajoute ici ton code pour "attacher" la palette ou la soulever
 	else:
 		print("Objet déposé : ", body.name)
@@ -229,7 +237,6 @@ func format_time(time: float) -> String:
 # Pour arrêter le chrono quand on a fini une mission
 func stop_timer():
 	is_timer_active = false
-
 
 func _on_wait_consigne_timeout() -> void:
 	wait_act = true
