@@ -36,6 +36,8 @@ var init_transform : Transform3D
 @export var STEER_LIMIT = 0.5      # Évite de se retourner
 @export var engine_force_value = 40.0 # Augmenté pour bouger la masse
 @export var MAX_SPEED_KMH = 20.0    # limite de 20 km/h
+#Basis (l'orientation) de départ du volant
+var volant_basis_initiale : Basis
 
 var speed_kmH : float
 var steer_target = 0
@@ -61,10 +63,12 @@ func _ready():
 	init_transform = car.global_transform
 	path = get_tree().current_scene.scene_file_path
 	nom_fich = path.get_file().get_basename()
+	volant_basis_initiale = volant.transform.basis
 	if nom_fich == "main1":
 		consigne.text = consigne_text[0]
 		wait_consigne.start()
 		can_drive = false
+
 
 # Nouvelle fonction pour gérer les seuils de médailles
 func update_label_color():
@@ -172,6 +176,18 @@ func process_steer(delta):
 	steer_target = Input.get_action_strength("right") - Input.get_action_strength("left")
 	steer_target *= STEER_LIMIT
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+	
+	# --- LOGIQUE DU VOLANT EN BASIS ---
+	# 1. On calcule l'angle voulu (180° max)
+	var angle_volant = -(steering / STEER_LIMIT) * PI
+
+	# 2. On définit l'axe local Y du volant
+	# (On prend le Y de la basis initiale pour qu'il tourne bien sur son axe "propre")
+	var axe_local_y = volant_basis_initiale.y.normalized()
+
+	# 3. On applique la rotation à partir de la basis initiale
+	# On repart de l'inclinaison d'origine et on applique la rotation locale
+	volant.transform.basis = volant_basis_initiale.rotated(axe_local_y, angle_volant)
 
 func traction(speed_ms):
 	# Plaque le chariot au sol proportionnellement à sa vitesse

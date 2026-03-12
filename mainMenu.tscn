@@ -35,22 +35,22 @@ shadow_enabled = true
 [node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_wked4")]
 transform = Transform3D(-1.5893256e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -1.5893256e-08, 17.2, 0.5000002, -3.2000017)
 
-[node name="MatCollision" parent="forklift" index="7" unique_id=235551822]
+[node name="MatCollision" parent="forklift" index="6" unique_id=235551822]
 transform = Transform3D(-0.99999976, 0, -8.742274e-08, 0, 1, 0, 8.742274e-08, 0, -0.99999976, 0, 1.0654109, -0.5013275)
 
-[node name="CollisionFourcheDroite" parent="forklift" index="8" unique_id=799407670]
+[node name="CollisionFourcheDroite" parent="forklift" index="7" unique_id=799407670]
 transform = Transform3D(-0.9999995, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.9999995, 0.2501104, 0.03857082, -1.4398947)
 
-[node name="CollisionFourcheGauche" parent="forklift" index="9" unique_id=321943223]
+[node name="CollisionFourcheGauche" parent="forklift" index="8" unique_id=321943223]
 transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, -0.24664664, 0.037264585, -1.4398956)
 
-[node name="CollisionFourcheStruct" parent="forklift" index="10" unique_id=1405214534]
+[node name="CollisionFourcheStruct" parent="forklift" index="9" unique_id=1405214534]
 transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, 0, 0.5372477, -0.8629799)
 
 [node name="Camera3D2" parent="forklift/SubViewport" parent_id_path=PackedInt32Array(1600336564, 79165641) index="0" unique_id=1337575932]
 transform = Transform3D(0.26638022, 0.21127892, -0.940426, 1.9162991e-08, 0.9756801, 0.2191991, 0.9638672, -0.05839036, 0.2599019, 17.438862, 2.423236, -2.9053714)
 
-[node name="Sprite3D" parent="forklift" index="12" unique_id=1217210079]
+[node name="Sprite3D" parent="forklift" index="11" unique_id=1217210079]
 texture = SubResource("ViewportTexture_wked4")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1507288]
@@ -128,6 +128,44 @@ pixel_size = 0.001
 billboard = 2
 font_size = 750
 outline_size = 127
+
+[node name="Commande" type="Label3D" parent="." unique_id=1833234435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.815418, 5.719182, -16.136057)
+pixel_size = 0.001
+billboard = 2
+text = "🚗 Pour bouger le chariot
+Pour avancer : Appuie sur le bouton Z ou RT ⬆️ (ou la gâchette).
+
+Pour reculer : Appuie sur le bouton S ou LT ⬇️.
+
+Pour tourner : Bouge le sitck de gauche 🕹️ de gauche à droite.
+
+Pour freiner : 🛑 Appuie sur le bouton RB .
+
+🍴 Pour utiliser la fourche
+Pour monter la fourche : Appuie sur le bouton 🔼 ou Y.
+
+Pour descendre la fourche : Appuie sur le bouton 🔽 ou A.
+
+Pour pencher le mât en arrière : Appuie sur le bouton ➡️ ou sur B.
+
+Pour remettre le mât droit : Appuie sur le bouton ⬅️ ou X.
+
+👀 Pour regarder autour de toi
+Pour tourner la tête : Bouge le stick de droite 🕹️ dans toutes les directions.
+
+⏱️ Le Chronomètre
+Couleur Or 🥇 : Tu vas très vite.
+
+Couleur Argent 🥈 : Tu es assez rapide.
+
+Couleur Bronze 🥉 : Tu as fini, mais tu peux faire mieux.
+
+🆘 En cas de problème
+Si tu es coincé : Appuie sur le bouton RESET 🔄 pour recommencer.
+
+Pour quitter le niveau : Appuie sur le bouton MENU 🏠."
+font_size = 350
 
 [editable path="forklift"]
 [editable path="forklift/fokrlift"]
