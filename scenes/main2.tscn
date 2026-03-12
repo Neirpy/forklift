@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cx5tqs84qhgel"]
 
 [ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_dmrlw"]
-[ext_resource type="Script" uid="uid://crprymvsl5n88" path="res://scenes/main_2.gd" id="1_xlafv"]
+[ext_resource type="Script" uid="uid://crprymvsl5n88" path="res://scenes/main2.gd" id="1_xlafv"]
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_8ce7h"]
 [ext_resource type="PackedScene" uid="uid://bxxt62sny47uw" path="res://addons/forklift.tscn" id="3_3yxjw"]
 [ext_resource type="PackedScene" uid="uid://d0q5va4rkb5mx" path="res://addons/pallet.tscn" id="4_3yxjw"]

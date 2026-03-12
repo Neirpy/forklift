@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b86ptm46k3xhe"]
+[gd_scene format=3 uid="uid://c0ayi0rmi6xvy"]
 
-[ext_resource type="Script" uid="uid://cxplyt1kro1xr" path="res://scenes/main_3.gd" id="1_kavpc"]
+[ext_resource type="Script" uid="uid://cj2t1aka1let0" path="res://scenes/main3.gd" id="1_2ouok"]
 [ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_vok63"]
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_0glbh"]
 [ext_resource type="Material" path="res://textures/Bricks066_1K-JPG/Bricks066_1K-JPG.tres" id="3_0glbh"]
@@ -20,7 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="main3" type="Node3D" unique_id=1402467325]
-script = ExtResource("1_kavpc")
+script = ExtResource("1_2ouok")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=431984031]
 environment = SubResource("Environment_tj0cy")
@@ -119,44 +119,64 @@ height = 3.0
 material = ExtResource("3_0glbh")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2036934334]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.75, 1.5, 13.650001)
-size = Vector3(1, 2, 31.2)
+transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, -13.96643, 1.5, 4.500518)
+size = Vector3(1, 2, 13.534278)
 material = ExtResource("2_0glbh")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1785477860]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.75, 1.5, 13.650001)
-size = Vector3(1, 2, 10.8)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.611501, 1.4870253, 18.7039)
+size = Vector3(1, 2, 14.809179)
 material = ExtResource("2_0glbh")
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=2100671223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8495646, 2, 13.649564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1254287, 2, 19.046783)
 height = 3.0
 material = ExtResource("3_0glbh")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D" unique_id=408924920]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.75, 1.5, 5.950001)
-size = Vector3(1, 2, 18)
+transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, -5.39563, 1.5, 6.1977625)
+size = Vector3(1, 2, 17.41748)
 material = ExtResource("2_0glbh")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D" unique_id=447427441]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 1.5, 5.950001)
-size = Vector3(1, 2, 24.5)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.0477295, 1.5, 13.638635)
+size = Vector3(1, 2, 22.489319)
 material = ExtResource("2_0glbh")
 
 [node name="CSGCylinder3D9" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=549530908]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.750436, 2, 5.949564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1625996, 2, 13.636755)
 height = 3.0
 material = ExtResource("3_0glbh")
 
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=685942546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2504358, 2, 5.949564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.769431, 2, 5.4993887)
 height = 3.0
 material = ExtResource("3_0glbh")
 
 [node name="CSGCylinder3D8" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1000170745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.349565, 2, 13.649564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.204204, 2, 13.649564)
 height = 3.0
 material = ExtResource("3_0glbh")
 
-[node name="car" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
-transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, -22.9, 0.5, -21.9)
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1336834243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.680021, 2, 10.182026)
+height = 3.0
+material = ExtResource("3_0glbh")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1751310388]
+transform = Transform3D(-0.99999374, 0.00026236373, 0.0035453625, 0.00032561153, 0.9998406, 0.017850803, -0.0035401108, 0.01785184, -0.9998344, -7.121584, 1.4870253, 16.340952)
+size = Vector3(1, 2, 5.4732423)
+material = ExtResource("2_0glbh")
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=401775426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2482214, 2, 18.686377)
+height = 3.0
+material = ExtResource("3_0glbh")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1695290440]
+transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, 7.1863422, 1.5, 9.681843)
+size = Vector3(1, 2, 9.597534)
+material = ExtResource("2_0glbh")
+
+[node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
+transform = Transform3D(-4.3711385e-08, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -4.3711385e-08, 18.300001, 0.5, -21.9)

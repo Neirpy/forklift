@@ -6,6 +6,8 @@ class_name BaseCar
 @onready var mat: MeshInstance3D = $Mat
 @onready var volant: MeshInstance3D = $fokrlift/Volant
 
+@onready var chronometre: Timer = $Chronometre
+
 #camera
 @export var controller_sensitivity: float = 3.0
 @export var tilt_upper_limit: float = deg_to_rad(80)
@@ -31,8 +33,17 @@ var max_height_fork : float = 1.70
 var min_angle_mat : float = -0.18
 var max_angle_mat :float = 0.0
 
+var time_elapsed: float = 0.0
+var is_timer_active: bool = false
+
 func _ready():
 	init_transform = car.global_transform
+	var path = get_tree().current_scene.scene_file_path
+	var nom_fich = path.get_file().get_basename()
+	if nom_fich != "mainMenu":
+		is_timer_active = true
+		chronometre.start()
+		label.label_settings.font_color = Color.GOLD
 
 func _physics_process(delta):
 	# Calcul propre de la vitesse en Km/h
@@ -47,7 +58,10 @@ func _physics_process(delta):
 	traction(linear_velocity.length()) # Utilise m/s pour la force vers le bas
 	
 	speed_label.text = str(round(speed_kmH)) + " Km/h"
-	label.text = "Chariot Électrique"
+	
+	if is_timer_active:
+		time_elapsed += delta
+		label.text = format_time(time_elapsed)
 
 func handle_camera_look(delta: float):
 	# Récupérer les deux axes du stick droit d'un coup
@@ -145,3 +159,26 @@ func _on_area_detect_palette_body_exited(body: Node3D) -> void:
 	else:
 		print("Objet déposé : ", body.name)
 	pass # Replace with function body.
+
+# Fonction pour transformer des secondes en format 00:00:00
+func format_time(time: float) -> String:
+	var minutes = int(time) / 60
+	var seconds = int(time) % 60
+	var milliseconds = int((time - int(time)) * 100)
+	# %02d permet de forcer l'affichage de 2 chiffres (ex: 01 au lieu de 1)
+	return "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
+
+# Pour arrêter le chrono quand on a fini une mission
+func stop_timer():
+	is_timer_active = false
+
+var cpt : int = 0
+
+func _on_chronometre_timeout() -> void:
+	chronometre.start()
+	cpt += 1
+	if cpt == 1:
+		label.label_settings.font_color = Color.SILVER
+	else:
+		label.label_settings.font_color = Color.SADDLE_BROWN
+		chronometre.stop()
