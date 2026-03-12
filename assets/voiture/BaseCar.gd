@@ -17,6 +17,7 @@ var consigne_text : Array[String] = [
 @onready var fourche: MeshInstance3D = $Mat/Fourche
 @onready var mat: MeshInstance3D = $Mat
 @onready var volant: MeshInstance3D = $fokrlift/Volant
+@onready var honk: AudioStreamPlayer = $Honk
 
 @onready var wait_consigne: Timer = $WaitConsigne
 
@@ -99,6 +100,7 @@ func _physics_process(delta):
 	speed_kmH = linear_velocity.length() * 3.6
 	
 	handle_camera_look(delta)
+	process_honk()
 	process_tilt(delta)
 	process_fork(delta)
 	process_accel(delta)
@@ -140,6 +142,10 @@ func handle_camera_look(delta: float):
 		
 		# On limite l'angle pour éviter le tournis
 		$Camera3D.rotation.x = clamp(new_tilt, tilt_lower_limit, tilt_upper_limit)
+
+func process_honk():
+	if Input.is_action_pressed("honk"):
+		honk.play()
 
 func process_tilt(delta):
 	if Input.is_action_pressed("tilt_in"):

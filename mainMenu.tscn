@@ -5,6 +5,7 @@
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_wc2lj"]
 [ext_resource type="PackedScene" uid="uid://bxxt62sny47uw" path="res://addons/forklift.tscn" id="3_wked4"]
 [ext_resource type="PackedScene" uid="uid://dtcgpnbe4sypk" path="res://assets/area_menu.tscn" id="4_wc2lj"]
+[ext_resource type="AudioStream" uid="uid://caw6q77fd0a2q" path="res://assets/sounds/victory.mp3" id="6_c3jr6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mknxj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -166,6 +167,30 @@ Si tu es coincé : Appuie sur le bouton RESET 🔄 pour recommencer.
 
 Pour quitter le niveau : Appuie sur le bouton MENU 🏠."
 font_size = 350
+
+[node name="Credit" type="Label3D" parent="." unique_id=1092781043]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.739525, 3.0468712, -16.136057)
+pixel_size = 0.001
+text = "Forklift low poly - Download Free 3D model by Ricardo Sanchez (@380660711785) [8ab650b] sur Sketchfab
+
+AMC Popcorn Pallet - Download Free 3D model by Pet Rock Miner (@moassisdoa) [38805fc] sur Sketchfab
+
+Texture briques (murs) : Painted Bricks 004 | ambientCG
+
+Texture routes (sols) : Road 013 A | ambientCG
+
+Texture briques (poteaux) : Bricks 066 | ambientCG 
+
+Bruit sonore sur pixabay.
+
+Blender pour la modélisation 3d.
+
+Godot pour le game engine.
+"
+font_size = 350
+
+[node name="Victory" type="AudioStreamPlayer" parent="." unique_id=1477472153]
+stream = ExtResource("6_c3jr6")
 
 [editable path="forklift"]
 [editable path="forklift/fokrlift"]
