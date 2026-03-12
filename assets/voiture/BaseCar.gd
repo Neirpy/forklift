@@ -9,7 +9,8 @@ var liste_medals_act : Array[String] = []
 @onready var consigne: Label = $Hud/Consigne
 var consigne_text : Array[String] = [
 	"Regarde autour de toi, \n il faut que tu ailles dans la zone d'arrivée \n le plus rapidement possible. \n Appuie sur accélérer pour commencer.",
-	"Déplacer les 4 palettes (boutons Y et A)\nsur les 4 emplacements (jaunes)\nle plus rapidement possible.\nUne fois les palettes déplacées,\nil faut aller dans la zone verte."
+	"Déplacer les 4 palettes (boutons Y et A)\nsur les 4 emplacements (jaunes)\nle plus rapidement possible.\nUne fois les palettes déplacées,\nil faut aller dans la zone verte.",
+	"Déplacer les 2 palettes à\nla zone de dépôt indiquée\nen traversant le parcours.\nUne fois les palettes déplacées,\nil faut aller dans la zone verte."
 ]
 
 @onready var car: BaseCar = $"."
@@ -69,6 +70,10 @@ func _ready():
 		consigne.text = consigne_text[1]
 		wait_consigne.start()
 		can_drive = false
+	if nom_fich == "main3":
+		consigne.text = consigne_text[2]
+		wait_consigne.start()
+		can_drive = false
 
 
 # Nouvelle fonction pour gérer les seuils de médailles
@@ -112,10 +117,14 @@ func _physics_process(delta):
 		if nom_fich == "main1":
 			silver_timer = 45 # 45 sec.
 			gold_timer = 30 # 30 sec
-		if nom_fich == "main2":
+		elif nom_fich == "main2":
 			silver_timer = 330 # 5 min. 30 sec.
 			gold_timer = 250 # 4 min. 10 sec.
+		elif nom_fich == "main3":
+			silver_timer = 180 # 3 min.
+			gold_timer = 150 # 2 min. 30 sec.
 		update_label_color(gold_timer, silver_timer)
+		
 
 func handle_camera_look(delta: float):
 	# Récupérer les deux axes du stick droit d'un coup

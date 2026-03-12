@@ -6,6 +6,11 @@ extends Node3D
 var occupation = {} # Clé: Area3D, Valeur: Array de corps présents
 var check_pallets : bool = false
 
+func _input(event):
+	# Retour au menu
+	if event.is_action_pressed("back_to_menu"):
+		get_tree().change_scene_to_file("res://mainMenu.tscn")
+		
 func _ready():
 	area_parcours.hide() # On cache la zone de fin au départ
 	for i in range(1, 5):

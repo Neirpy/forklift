@@ -5,6 +5,9 @@
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_0glbh"]
 [ext_resource type="Material" path="res://textures/Bricks066_1K-JPG/Bricks066_1K-JPG.tres" id="3_0glbh"]
 [ext_resource type="PackedScene" uid="uid://bxxt62sny47uw" path="res://addons/forklift.tscn" id="3_y6v6r"]
+[ext_resource type="PackedScene" uid="uid://d0q5va4rkb5mx" path="res://addons/pallet.tscn" id="6_mtufi"]
+[ext_resource type="PackedScene" path="res://assets/area_palette.tscn" id="7_wir25"]
+[ext_resource type="PackedScene" uid="uid://dhegospfbrycc" path="res://assets/area_parcours.tscn" id="8_krown"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mknxj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +22,7 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kavpc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1egkt"]
 viewport_path = NodePath("SubViewport")
 
 [node name="main3" type="Node3D" unique_id=1402467325]
@@ -181,26 +184,54 @@ transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.
 size = Vector3(1, 2, 9.597534)
 material = ExtResource("2_0glbh")
 
+[node name="CSGBox3D18" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1677238648]
+transform = Transform3D(0.9999998, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999998, -26.228802, 0.6794921, -22.050001)
+size = Vector3(1.8366699, 0.64101565, 7.8)
+material = ExtResource("2_0glbh")
+
 [node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
 transform = Transform3D(-4.3711385e-08, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -4.3711385e-08, 18.300001, 0.5, -21.9)
 
-[node name="MatCollision" parent="forklift" index="7" unique_id=235551822]
+[node name="MatCollision" parent="forklift" index="6" unique_id=235551822]
 transform = Transform3D(-0.9999997, 0, -8.742272e-08, 0, 1, 0, 8.742272e-08, 0, -0.9999997, 0, 1.065411, -0.5013275)
 
-[node name="CollisionFourcheDroite" parent="forklift" index="8" unique_id=799407670]
+[node name="CollisionFourcheDroite" parent="forklift" index="7" unique_id=799407670]
 transform = Transform3D(-0.99999946, 0, -8.742269e-08, 0, 1, 0, 8.742269e-08, 0, -0.99999946, 0.25011063, 0.03857082, -1.4398956)
 
-[node name="CollisionFourcheGauche" parent="forklift" index="9" unique_id=321943223]
+[node name="CollisionFourcheGauche" parent="forklift" index="8" unique_id=321943223]
 transform = Transform3D(-0.99999964, 0, -8.7422706e-08, 0, 1, 0, 8.7422706e-08, 0, -0.99999964, -0.24664688, 0.037264585, -1.4398975)
 
-[node name="CollisionFourcheStruct" parent="forklift" index="10" unique_id=1405214534]
+[node name="CollisionFourcheStruct" parent="forklift" index="9" unique_id=1405214534]
 transform = Transform3D(-0.99999964, 0, -8.7422706e-08, 0, 1, 0, 8.7422706e-08, 0, -0.99999964, 0, 0.5372478, -0.8629799)
 
 [node name="Camera3D2" parent="forklift/SubViewport" parent_id_path=PackedInt32Array(1600336564, 79165641) index="0" unique_id=1337575932]
 transform = Transform3D(0.2663802, 0.2112789, -0.94042593, 1.9162991e-08, 0.9756801, 0.2191991, 0.9638671, -0.05839036, 0.25990188, 18.538862, 2.423236, -21.60537)
 
-[node name="Sprite3D" parent="forklift" index="12" unique_id=1217210079]
-texture = SubResource("ViewportTexture_kavpc")
+[node name="Sprite3D" parent="forklift" index="11" unique_id=1217210079]
+texture = SubResource("ViewportTexture_1egkt")
+
+[node name="Palette" parent="." unique_id=1648393257 groups=["palettes"] instance=ExtResource("6_mtufi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.092365, 1.01321, -21.9)
+
+[node name="Palette2" parent="." unique_id=71973581 groups=["palettes"] instance=ExtResource("6_mtufi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.372808, 0.5264003, 19.817966)
+
+[node name="AreaPalette1" parent="." unique_id=1594649461 instance=ExtResource("7_wir25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9554541, 0.52793866, 8.559081)
+
+[node name="Label3D" type="Label3D" parent="AreaPalette1" unique_id=487171704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.522618, 0)
+pixel_size = 0.001
+billboard = 2
+text = "Dépôt des palettes
+⬇️"
+font_size = 750
+outline_size = 127
+
+[node name="AreaParcours" parent="." unique_id=241931789 instance=ExtResource("8_krown")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.02137, 0.55, 20.762539)
+
+[connection signal="body_entered" from="AreaParcours" to="." method="_on_area_parcours_body_entered"]
 
 [editable path="forklift"]
 [editable path="forklift/fokrlift"]
