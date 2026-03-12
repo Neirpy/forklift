@@ -2,6 +2,8 @@ extends VehicleBody3D
 class_name BaseCar
 
 @onready var car: BaseCar = $"."
+@onready var fourche: MeshInstance3D = $Mat/Fourche
+@onready var mat: MeshInstance3D = $Mat
 
 @onready var speed_label: Label = $Hud/speed
 @onready var label: Label = $Hud/Label
@@ -17,10 +19,29 @@ var init_transform : Transform3D
 var speed_kmH : float
 var steer_target = 0
 
+var min_height_fork : float = 0.0
+var max_height_fork : float = 175.0
+
+var min_angle_mat : float = -0.18
+var max_angle_mat :float = 0.0
+
 func _ready():
 	init_transform = car.global_transform
 
 func _physics_process(delta):
+	if Input.is_action_pressed("fork_up"):
+		fourche.position.y += 10.0 * delta
+		fourche.position.y = clampf(fourche.position.y, min_height_fork, max_height_fork)
+	if Input.is_action_pressed("fork_down"):
+		fourche.position.y -= 10.0 * delta
+		fourche.position.y = clampf(fourche.position.y, min_height_fork, max_height_fork)
+	if Input.is_action_pressed("tilt_in"):
+		mat.rotation.x += .1 * delta
+		mat.rotation.x = clampf(mat.rotation.x, min_angle_mat, max_angle_mat)
+	if Input.is_action_pressed("tilt_out"):
+		mat.rotation.x -= .1 * delta
+		mat.rotation.x = clampf(mat.rotation.x, min_angle_mat, max_angle_mat)
+	
 	# Calcul propre de la vitesse en Km/h
 	speed_kmH = linear_velocity.length() * 3.6
 	
