@@ -1,82 +1,81 @@
 extends VehicleBody3D
 class_name BaseCar
 
-@export var STEER_SPEED = 1.5
-@export var STEER_LIMIT = 0.6
+@onready var car: BaseCar = $"."
+
+@onready var speed_label: Label = $Hud/speed
+@onready var label: Label = $Hud/Label
+var init_position : Vector3
+var init_transform : Transform3D
+
+# --- VALEURS AJUSTÉES POUR CHARIOT ---
+@export var STEER_SPEED = 2.0      # Plus réactif pour un petit chariot
+@export var STEER_LIMIT = 0.5      # Évite de se retourner
+@export var engine_force_value = 40.0 # Augmenté pour bouger la masse
+@export var MAX_SPEED_KMH = 25.0    # Ta limite de 25 km/h
+
+var speed_kmH : float
 var steer_target = 0
-@export var engine_force_value = 40
-
-var gearshift = 3
-var gear_multiplicator = 1
-var gear_locked = false
-
-var fwd_mps : float
-var speed: float
 
 func _ready():
-	%CarResetter.init()
+	init_transform = car.global_transform
 
 func _physics_process(delta):
-	speed = linear_velocity.length()*Engine.get_frames_per_second()*delta
-	fwd_mps = transform.basis.x.x
-	traction(speed)
-	process_gear_shift()
+	# Calcul propre de la vitesse en Km/h
+	speed_kmH = linear_velocity.length() * 3.6
+	
 	process_accel(delta)
 	process_steer(delta)
 	process_brake(delta)
-	%Hud/speed.text=str(round(speed*3.6))+"  KMPH"
-	%Hud/gearshift_label.text="Gear: "+str(gearshift)
-
-func process_accel(delta):
-	if Input.is_action_pressed("forward"):
-		# Increase engine force at low speeds to make the initial acceleration faster.
-		if fwd_mps >= -1:
-			if speed < 30 and speed != 0:
-				engine_force = clamp(engine_force_value * 10 / speed, 0, 300)
-			else:
-				engine_force = engine_force_value
-		engine_force = engine_force * gear_multiplicator
-		return
+	traction(linear_velocity.length()) # Utilise m/s pour la force vers le bas
 	
-	if Input.is_action_pressed("backward"):
-	# Increase engine force at low speeds to make the initial acceleration faster.
-		if speed < 20 and speed != 0:
-			engine_force = -clamp(engine_force_value * 3 / speed, 0, 300)
-		else:
-			engine_force = -engine_force_value
-		return
-	engine_force = 0
-	brake = 0
+	speed_label.text = str(round(speed_kmH)) + " Km/h"
+	label.text = "Chariot Électrique"
 
-func process_gear_shift():
-	# Gear shift for driving faster!
-	if Input.is_action_pressed("gear"):
-		if gear_locked == false:
-			gear_locked = true
-			gearshift +=1
-			if gearshift == 6: gearshift = 1
-			if gearshift == 1: gear_multiplicator = 0.3
-			elif gearshift == 2: gear_multiplicator = 0.7
-			elif gearshift == 3: gear_multiplicator = 1
-			elif gearshift == 4: gear_multiplicator = 1.3
-			elif gearshift == 5: gear_multiplicator = 1.8
-			await get_tree().create_timer(1.0).timeout
-			gear_locked = false
+func process_accel(_delta):
+	var forward_input = Input.is_action_pressed("forward")
+	var backward_input = Input.is_action_pressed("backward")
+	
+	# LIMITEUR DE VITESSE
+	if speed_kmH >= MAX_SPEED_KMH and forward_input:
+		engine_force = 0
+		return
+
+	if speed_kmH >= MAX_SPEED_KMH/3 and backward_input:
+		engine_force = 0
+		return
+
+	if forward_input:
+		# Couple électrique : Puissance constante jusqu'à la limite
+		engine_force = -engine_force_value * 0.5
+		return
+		
+	if backward_input:
+		# Marche arrière souvent plus lente sur un chariot
+		engine_force = engine_force_value /3
+		return
+
+	engine_force = 0
+
+func process_brake(_delta):
+	if Input.is_action_pressed("break"):
+		brake = 5.0 # Un chariot s'arrête vite
+	else:
+		# Frein moteur léger (typiquement électrique)
+		brake = 0.1 
 
 func process_steer(delta):
-	steer_target = Input.get_action_strength("left") - Input.get_action_strength("right")
+	steer_target = Input.get_action_strength("right") - Input.get_action_strength("left")
 	steer_target *= STEER_LIMIT
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 
-func process_brake(delta):
-	if Input.is_action_pressed("ui_select"):
-		brake=0.5
-		$wheel_rear_left.wheel_friction_slip=2
-		$wheel_rear_right.wheel_friction_slip=2
-	else:
-		$wheel_rear_left.wheel_friction_slip=2.9
-		$wheel_rear_right.wheel_friction_slip=2.9
+func traction(speed_ms):
+	# Plaque le chariot au sol proportionnellement à sa vitesse
+	apply_central_force(Vector3.DOWN * speed_ms * 10.0)
 
-
-func traction(speed):
-	apply_central_force(Vector3.DOWN*speed)
+func _input(event):
+	if event.is_action_pressed("reset"):
+		# Correction du reset pour éviter les comportements bizarres
+		global_transform = init_transform
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
