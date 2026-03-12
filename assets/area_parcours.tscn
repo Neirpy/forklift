@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dtcgpnbe4sypk"]
+[gd_scene format=3 uid="uid://dhegospfbrycc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iy533"]
 size = Vector3(2, 1, 2)
@@ -10,7 +10,7 @@ albedo_color = Color(0.29803923, 1, 0, 1)
 material = SubResource("StandardMaterial3D_cwl6i")
 height = 0.1
 
-[node name="AreaMenu" type="Area3D" unique_id=1594649461]
+[node name="AreaParcours" type="Area3D" unique_id=1594649461]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1421096533]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
@@ -18,3 +18,12 @@ shape = SubResource("BoxShape3D_iy533")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1482411324]
 mesh = SubResource("CylinderMesh_7h0lp")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1110143074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.522618, 0)
+pixel_size = 0.001
+billboard = 2
+text = "Fin
+⬇️"
+font_size = 750
+outline_size = 127

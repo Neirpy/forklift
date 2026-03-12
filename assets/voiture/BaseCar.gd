@@ -4,12 +4,22 @@ class_name BaseCar
 #emoji médailles 
 # 🥇 🥈 🥉
 
+var liste_medals_act : Array[String] = []
+
+@onready var consigne: Label = $Hud/Consigne
+var consigne_text : Array[String] = [
+	"Regarde autour de toi, \n il faut que tu ailles dans la zone d'arrivée \n le plus rapidement possible. \n Appuie sur accélérer pour commencer."
+]
+
 @onready var car: BaseCar = $"."
 @onready var fourche: MeshInstance3D = $Mat/Fourche
 @onready var mat: MeshInstance3D = $Mat
 @onready var volant: MeshInstance3D = $fokrlift/Volant
 
+
+
 @onready var chronometre: Timer = $Chronometre
+@onready var wait_consigne: Timer = $WaitConsigne
 
 #camera
 @export var controller_sensitivity: float = 3.0
@@ -39,16 +49,42 @@ var max_angle_mat :float = 0.0
 var time_elapsed: float = 0.0
 var is_timer_active: bool = false
 
+var path
+var nom_fich
+
+var start_act : bool = false
+var wait_act : bool = false
+var can_drive : bool = false
+
+
 func _ready():
 	init_transform = car.global_transform
-	var path = get_tree().current_scene.scene_file_path
-	var nom_fich = path.get_file().get_basename()
-	if nom_fich != "mainMenu":
-		is_timer_active = true
-		chronometre.start()
+	path = get_tree().current_scene.scene_file_path
+	nom_fich = path.get_file().get_basename()
+	if nom_fich == "main1":
+		consigne.text = consigne_text[0]
+		wait_consigne.start()
+		can_drive = false
+
+# Nouvelle fonction pour gérer les seuils de médailles
+func update_label_color():
+	if time_elapsed < 30.0:
 		label.label_settings.font_color = Color.GOLD
+	elif time_elapsed < 45.0:
+		label.label_settings.font_color = Color.SILVER
+	else:
+		label.label_settings.font_color = Color.SADDLE_BROWN # Bronze
 
 func _physics_process(delta):
+	if nom_fich != "mainMenu" and wait_act:
+		if start_act:
+			consigne.hide()
+			wait_act = false
+			is_timer_active = true
+			label.label_settings.font_color = Color.GOLD
+	elif nom_fich == "mainMenu" :
+		can_drive = true
+	
 	# Calcul propre de la vitesse en Km/h
 	speed_kmH = linear_velocity.length() * 3.6
 	
@@ -65,6 +101,7 @@ func _physics_process(delta):
 	if is_timer_active:
 		time_elapsed += delta
 		label.text = format_time(time_elapsed)
+		update_label_color()
 
 func handle_camera_look(delta: float):
 	# Récupérer les deux axes du stick droit d'un coup
@@ -101,6 +138,7 @@ func process_accel(_delta):
 	var forward_input = Input.is_action_pressed("forward")
 	var backward_input = Input.is_action_pressed("backward")
 	
+	
 	# LIMITEUR DE VITESSE
 	if speed_kmH >= MAX_SPEED_KMH and forward_input:
 		engine_force = 0
@@ -110,12 +148,13 @@ func process_accel(_delta):
 		engine_force = 0
 		return
 
-	if forward_input:
+	if forward_input and can_drive:
 		# Couple électrique : Puissance constante jusqu'à la limite
+		start_act = true
 		engine_force = -engine_force_value /3
 		return
 		
-	if backward_input:
+	if backward_input and can_drive:
 		# Marche arrière souvent plus lente sur un chariot
 		engine_force = engine_force_value /4
 		return
@@ -175,13 +214,8 @@ func format_time(time: float) -> String:
 func stop_timer():
 	is_timer_active = false
 
-var cpt : int = 0
 
-func _on_chronometre_timeout() -> void:
-	chronometre.start()
-	cpt += 1
-	if cpt == 1:
-		label.label_settings.font_color = Color.SILVER
-	else:
-		label.label_settings.font_color = Color.SADDLE_BROWN
-		chronometre.stop()
+func _on_wait_consigne_timeout() -> void:
+	wait_act = true
+	can_drive = true
+	pass # Replace with function body.

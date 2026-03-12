@@ -87,30 +87,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.800001, 0.5, 15.200001)
 
 [node name="Label3D" type="Label3D" parent="AreaMenuLvl1" unique_id=1224607303]
 transform = Transform3D(-0.9396926, 0, -0.34202018, 0, 1, 0, 0.34202018, 0, -0.9396926, 0, 3.8000002, -9.536743e-07)
-pixel_size = 0.03
+pixel_size = 0.001
 text = "Niveau 1 :
-Déplacements"
+Déplacements :
+Fais le parcours 
+le plus rapidement"
+font_size = 500
+outline_size = 127
 
 [node name="AreaMenuLvl2" parent="." unique_id=43289312 instance=ExtResource("4_wc2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.499998, 0.5, 15.400001)
 
 [node name="Label3D" type="Label3D" parent="AreaMenuLvl2" unique_id=180938825]
 transform = Transform3D(-1.0000001, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1.0000001, 0, 4.5000005, -9.536743e-07)
-pixel_size = 0.03
+pixel_size = 0.001
 text = "Niveau 2 :
-Déplacement
-de charges"
+Déplacement de charges :
+Replace les quatre charges
+le plus rapidement."
+font_size = 500
+outline_size = 127
 
 [node name="AreaMenuLvl3" parent="." unique_id=2106999260 instance=ExtResource("4_wc2lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8, 0.5, 15.5)
 
 [node name="Label3D" type="Label3D" parent="AreaMenuLvl3" unique_id=411454642]
 transform = Transform3D(-0.9396926, 0, 0.3420201, 0, 1, 0, -0.3420201, 0, -0.9396926, 0, 4.5000005, -9.536743e-07)
-pixel_size = 0.03
+pixel_size = 0.001
 text = "Niveau 3 :
-Déplacement
-de charge sur
-un parcours"
+Déplacement de charge 
+sur un parcours :
+Prends une charge, 
+amène là au bout du parcours."
+font_size = 500
+outline_size = 127
 
 [node name="AffichageScore" type="Label3D" parent="." unique_id=562022776]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.159351, 4.136052, -2.2088976)

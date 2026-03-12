@@ -5,6 +5,7 @@
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_0glbh"]
 [ext_resource type="Material" path="res://textures/Bricks066_1K-JPG/Bricks066_1K-JPG.tres" id="3_0glbh"]
 [ext_resource type="PackedScene" uid="uid://bxxt62sny47uw" path="res://addons/forklift.tscn" id="3_y6v6r"]
+[ext_resource type="PackedScene" uid="uid://dhegospfbrycc" path="res://assets/area_parcours.tscn" id="6_14e2d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mknxj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +20,10 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="main3" type="Node3D" unique_id=1402467325]
+[sub_resource type="ViewportTexture" id="ViewportTexture_14e2d"]
+viewport_path = NodePath("SubViewport")
+
+[node name="main1" type="Node3D" unique_id=1402467325]
 script = ExtResource("1_kavpc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=431984031]
@@ -158,5 +162,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.349565, 2, 13.649564)
 height = 3.0
 material = ExtResource("3_0glbh")
 
-[node name="car" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
+[node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
 transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, -22.9, 0.5, -21.9)
+
+[node name="MatCollision" parent="forklift" index="7" unique_id=235551822]
+transform = Transform3D(-0.99999976, 0, -8.742275e-08, 0, 1, 0, 8.742275e-08, 0, -0.99999976, 0, 1.065411, -0.5013275)
+
+[node name="CollisionFourcheDroite" parent="forklift" index="8" unique_id=799407670]
+transform = Transform3D(-0.9999995, 0, -8.742269e-08, 0, 1, 0, 8.742269e-08, 0, -0.9999995, 0.25010872, 0.03857082, -1.4398975)
+
+[node name="CollisionFourcheGauche" parent="forklift" index="9" unique_id=321943223]
+transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, -0.24664879, 0.037264585, -1.4398956)
+
+[node name="CollisionFourcheStruct" parent="forklift" index="10" unique_id=1405214534]
+transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, 0, 0.5372478, -0.8629799)
+
+[node name="Camera3D2" parent="forklift/SubViewport" parent_id_path=PackedInt32Array(1600336564, 79165641) index="0" unique_id=1337575932]
+transform = Transform3D(-0.26638016, -0.21127892, 0.940426, 1.9162991e-08, 0.9756801, 0.2191991, -0.9638672, 0.05839035, -0.25990185, -23.13886, 2.423236, -22.19463)
+
+[node name="Sprite3D" parent="forklift" index="12" unique_id=1217210079]
+texture = SubResource("ViewportTexture_14e2d")
+
+[node name="AreaParcours" parent="." unique_id=1594649461 instance=ExtResource("6_14e2d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.489676, 0.5499962, 18.272034)
+
+[connection signal="body_entered" from="AreaParcours" to="." method="_on_area_parcours_body_entered"]
+
+[editable path="forklift"]
+[editable path="forklift/fokrlift"]
