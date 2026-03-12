@@ -101,7 +101,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.
 size = Vector3(1.5, 1, 12)
 material = ExtResource("2_8ce7h")
 
-[node name="car" parent="." unique_id=1600336564 instance=ExtResource("3_3yxjw")]
+[node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_3yxjw")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3, 1, 0)
 
 [node name="RigidBody3D" parent="." unique_id=1648393257 instance=ExtResource("4_3yxjw")]
