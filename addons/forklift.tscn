@@ -229,6 +229,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3x043")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_js5kl"]
+
 [node name="forklift" unique_id=1600336564 instance=ExtResource("1_h6ocl")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 center_of_mass = Vector3(0, -0.1, 0.55)
@@ -339,6 +341,12 @@ remote_path = NodePath("../../../CollisionFourcheGauche")
 transform = Transform3D(0.99999964, 0, -3.5527137e-14, 0, 1, 0, 3.5527137e-14, 0, 0.99999964, -0.25011045, 0.038570836, 0.85050917)
 remote_path = NodePath("../../../CollisionFourcheDroite")
 
+[node name="AreaDetectPalette" type="Area3D" parent="Mat/Fourche" index="3" unique_id=1944279640]
+transform = Transform3D(0.9999998, 0, -1.4210855e-14, 0, 1, 0, 1.4210855e-14, 0, 0.9999998, -7.690328e-08, 0.5597545, 0.8796706)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mat/Fourche/AreaDetectPalette" index="0" unique_id=789351747]
+shape = SubResource("BoxShape3D_js5kl")
+
 [node name="fokrlift" parent="." index="13" unique_id=1389712084 instance=ExtResource("2_qs56r")]
 transform = Transform3D(-0.99999994, 0, 1.5099579e-07, 0, 1, 0, -1.5099579e-07, 0, -0.99999994, 0, 0, 0)
 
@@ -359,5 +367,8 @@ visible = false
 
 [node name="RoueAvantDroite" parent="fokrlift" index="8" unique_id=234809183]
 visible = false
+
+[connection signal="body_entered" from="Mat/Fourche/AreaDetectPalette" to="." method="_on_area_detect_palette_body_entered"]
+[connection signal="body_exited" from="Mat/Fourche/AreaDetectPalette" to="." method="_on_area_detect_palette_body_exited"]
 
 [editable path="fokrlift"]

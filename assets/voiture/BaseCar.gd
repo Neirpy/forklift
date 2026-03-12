@@ -101,3 +101,21 @@ func _input(event):
 		global_transform = init_transform
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
+
+
+func _on_area_detect_palette_body_entered(body: Node3D) -> void:
+# On vérifie si le nom du body contient "pallet" (en minuscules pour éviter les erreurs)
+	if body.name.to_lower().contains("pallet"):
+		print("Palette détectée : ", body.name)
+		# Ajoute ici ton code pour "attacher" la palette ou la soulever
+	else:
+		print("Objet ignoré : ", body.name)
+
+
+func _on_area_detect_palette_body_exited(body: Node3D) -> void:
+	if body.name.to_lower().contains("pallet"):
+		print("Palette déposé : ", body.name)
+		# Ajoute ici ton code pour "attacher" la palette ou la soulever
+	else:
+		print("Objet déposé : ", body.name)
+	pass # Replace with function body.

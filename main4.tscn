@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://xbsraav20fjs"]
+[gd_scene format=3 uid="uid://c0ayi0rmi6xvy"]
 
 [ext_resource type="Material" uid="uid://u0vyiogkrtwn" path="res://textures/Road013A_1K-JPG/Road013A_1K-JPG.tres" id="1_vok63"]
 [ext_resource type="Material" path="res://textures/PaintedBricks004_1K-JPG/PaintedBricks004_1K-JPG.tres" id="2_0glbh"]
@@ -176,5 +176,5 @@ transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.
 size = Vector3(1, 2, 9.597534)
 material = ExtResource("2_0glbh")
 
-[node name="car" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
-transform = Transform3D(-4.371139e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371139e-08, 18.300001, 0.5, -21.9)
+[node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
+transform = Transform3D(-4.3711385e-08, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -4.3711385e-08, 18.300001, 0.5, -21.9)
