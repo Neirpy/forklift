@@ -1,5 +1,5 @@
-# forklift
-Projet Jeu sérieux simulateur de chario élévateur.
+# Forklift
+Projet Jeu sérieux simulation et théorique de chario élévateur.
 
 
 ## 🚀 Comment lancer le jeu ?
