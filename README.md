@@ -1,6 +1,6 @@
 # Forklift
 Projet Jeu sérieux simulation et théorique de chario élévateur.
-
+Lien : https://petitcyp.itch.io/forklifter
 
 ## 🚀 Comment lancer le jeu ?
 Il existe deux manières principales de découvrir le projet.
