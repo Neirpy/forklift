@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vb21evjm5qnr"
 path.s3tc="res://.godot/imported/M_Wood_Pine_MetallicRoughness.png-2026f2e6acac1b2c649b047dd85718f9.s3tc.ctex"
+path.etc2="res://.godot/imported/M_Wood_Pine_MetallicRoughness.png-2026f2e6acac1b2c649b047dd85718f9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://addons/amc-popcorn-pallet/textures/M_Wood_Pine_MetallicRoughness.png"
-dest_files=["res://.godot/imported/M_Wood_Pine_MetallicRoughness.png-2026f2e6acac1b2c649b047dd85718f9.s3tc.ctex"]
+dest_files=["res://.godot/imported/M_Wood_Pine_MetallicRoughness.png-2026f2e6acac1b2c649b047dd85718f9.s3tc.ctex", "res://.godot/imported/M_Wood_Pine_MetallicRoughness.png-2026f2e6acac1b2c649b047dd85718f9.etc2.ctex"]
 
 [params]
 

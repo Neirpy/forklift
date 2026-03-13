@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0q5va4rkb5mx"]
 
-[ext_resource type="PackedScene" uid="uid://17s3bomeo3nr" path="res://addons/amc-popcorn-pallet/pallet.blend" id="1_r8q5o"]
+[ext_resource type="PackedScene" uid="uid://bwii3q1nm1wyw" path="res://addons/amc-popcorn-pallet/pallet.glb" id="1_y73sf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8q5o"]
 size = Vector3(1.2, 1.1, 1.2)
@@ -34,4 +34,4 @@ shape = SubResource("BoxShape3D_ipn1s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.541826, 0.06405165, -0.0028718412)
 shape = SubResource("BoxShape3D_ubkpa")
 
-[node name="pallet" parent="." unique_id=1532607627 instance=ExtResource("1_r8q5o")]
+[node name="pallet" parent="." unique_id=1620297446 instance=ExtResource("1_y73sf")]

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1qv3fve23q3k"
 path.s3tc="res://.godot/imported/3771_Mat_BaseColor.png-ee98674e2110900a411765d90b60746f.s3tc.ctex"
+path.etc2="res://.godot/imported/3771_Mat_BaseColor.png-ee98674e2110900a411765d90b60746f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://addons/amc-popcorn-pallet/textures/3771_Mat_BaseColor.png"
-dest_files=["res://.godot/imported/3771_Mat_BaseColor.png-ee98674e2110900a411765d90b60746f.s3tc.ctex"]
+dest_files=["res://.godot/imported/3771_Mat_BaseColor.png-ee98674e2110900a411765d90b60746f.s3tc.ctex", "res://.godot/imported/3771_Mat_BaseColor.png-ee98674e2110900a411765d90b60746f.etc2.ctex"]
 
 [params]
 

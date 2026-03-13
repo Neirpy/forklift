@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b762vxq3bp8ny"
 path.s3tc="res://.godot/imported/fokrlift_Loader_car_Material_Base_Color.png-49890396fe25daaf11a9e4b838d597f4.s3tc.ctex"
+path.etc2="res://.godot/imported/fokrlift_Loader_car_Material_Base_Color.png-49890396fe25daaf11a9e4b838d597f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/forklift-low-poly/fokrlift_Loader_car_Material_Base_Color.png"
-dest_files=["res://.godot/imported/fokrlift_Loader_car_Material_Base_Color.png-49890396fe25daaf11a9e4b838d597f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/fokrlift_Loader_car_Material_Base_Color.png-49890396fe25daaf11a9e4b838d597f4.s3tc.ctex", "res://.godot/imported/fokrlift_Loader_car_Material_Base_Color.png-49890396fe25daaf11a9e4b838d597f4.etc2.ctex"]
 
 [params]
 

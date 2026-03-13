@@ -165,22 +165,22 @@ material = ExtResource("3_0glbh")
 [node name="forklift" parent="." unique_id=1600336564 instance=ExtResource("3_y6v6r")]
 transform = Transform3D(-4.371138e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.371138e-08, -22.9, 0.5, -21.9)
 
-[node name="MatCollision" parent="forklift" index="7" unique_id=235551822]
+[node name="MatCollision" parent="forklift" index="6" unique_id=235551822]
 transform = Transform3D(-0.99999976, 0, -8.742275e-08, 0, 1, 0, 8.742275e-08, 0, -0.99999976, 0, 1.065411, -0.5013275)
 
-[node name="CollisionFourcheDroite" parent="forklift" index="8" unique_id=799407670]
+[node name="CollisionFourcheDroite" parent="forklift" index="7" unique_id=799407670]
 transform = Transform3D(-0.9999995, 0, -8.742269e-08, 0, 1, 0, 8.742269e-08, 0, -0.9999995, 0.25010872, 0.03857082, -1.4398975)
 
-[node name="CollisionFourcheGauche" parent="forklift" index="9" unique_id=321943223]
+[node name="CollisionFourcheGauche" parent="forklift" index="8" unique_id=321943223]
 transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, -0.24664879, 0.037264585, -1.4398956)
 
-[node name="CollisionFourcheStruct" parent="forklift" index="10" unique_id=1405214534]
+[node name="CollisionFourcheStruct" parent="forklift" index="9" unique_id=1405214534]
 transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0, -0.9999997, 0, 0.5372478, -0.8629799)
 
 [node name="Camera3D2" parent="forklift/SubViewport" parent_id_path=PackedInt32Array(1600336564, 79165641) index="0" unique_id=1337575932]
 transform = Transform3D(-0.26638016, -0.21127892, 0.940426, 1.9162991e-08, 0.9756801, 0.2191991, -0.9638672, 0.05839035, -0.25990185, -23.13886, 2.423236, -22.19463)
 
-[node name="Sprite3D" parent="forklift" index="12" unique_id=1217210079]
+[node name="Sprite3D" parent="forklift" index="11" unique_id=1217210079]
 texture = SubResource("ViewportTexture_14e2d")
 
 [node name="AreaParcours" parent="." unique_id=1594649461 instance=ExtResource("6_14e2d")]

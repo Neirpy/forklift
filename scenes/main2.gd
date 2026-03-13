@@ -54,11 +54,11 @@ func _on_area_parcours_body_entered(_body: Node3D) -> void:
 		save_and_exit()
 
 func save_and_exit():
-	var current_medal = "🥉"
+	var current_medal = "Bronze 🥉"
 	if label.label_settings.font_color == Color.GOLD:
-		current_medal = "🥇"
+		current_medal = "Or 🥇"
 	elif label.label_settings.font_color == Color.SILVER:
-		current_medal = "🥈"
+		current_medal = "Argent 🥈"
 	
 	var level_id = get_tree().current_scene.scene_file_path.get_file().get_basename()
 	GameManager.save_medal(level_id, current_medal)

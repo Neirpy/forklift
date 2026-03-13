@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://05yyhi821txv"
 path.s3tc="res://.godot/imported/Road013A_1K-JPG_AmbientOcclusion.jpg-662f0954d5afbfe3afa1afd041a8e7ab.s3tc.ctex"
+path.etc2="res://.godot/imported/Road013A_1K-JPG_AmbientOcclusion.jpg-662f0954d5afbfe3afa1afd041a8e7ab.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Road013A_1K-JPG/Road013A_1K-JPG_AmbientOcclusion.jpg"
-dest_files=["res://.godot/imported/Road013A_1K-JPG_AmbientOcclusion.jpg-662f0954d5afbfe3afa1afd041a8e7ab.s3tc.ctex"]
+dest_files=["res://.godot/imported/Road013A_1K-JPG_AmbientOcclusion.jpg-662f0954d5afbfe3afa1afd041a8e7ab.s3tc.ctex", "res://.godot/imported/Road013A_1K-JPG_AmbientOcclusion.jpg-662f0954d5afbfe3afa1afd041a8e7ab.etc2.ctex"]
 
 [params]
 

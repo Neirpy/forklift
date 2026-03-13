@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp456qcc1wrg7"
 path.s3tc="res://.godot/imported/pallet_cc0_-_cardboard_box_closed_texture_2.png-8a56471873f859c80aaecf80e1084723.s3tc.ctex"
+path.etc2="res://.godot/imported/pallet_cc0_-_cardboard_box_closed_texture_2.png-8a56471873f859c80aaecf80e1084723.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/amc-popcorn-pallet/pallet_cc0_-_cardboard_box_closed_texture_2.png"
-dest_files=["res://.godot/imported/pallet_cc0_-_cardboard_box_closed_texture_2.png-8a56471873f859c80aaecf80e1084723.s3tc.ctex"]
+dest_files=["res://.godot/imported/pallet_cc0_-_cardboard_box_closed_texture_2.png-8a56471873f859c80aaecf80e1084723.s3tc.ctex", "res://.godot/imported/pallet_cc0_-_cardboard_box_closed_texture_2.png-8a56471873f859c80aaecf80e1084723.etc2.ctex"]
 
 [params]
 

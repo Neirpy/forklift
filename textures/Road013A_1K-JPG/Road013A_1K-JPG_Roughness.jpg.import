@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2jg3oswv4voy"
 path.s3tc="res://.godot/imported/Road013A_1K-JPG_Roughness.jpg-2cb2e5d762527ea2501d6d753f2b83c8.s3tc.ctex"
+path.etc2="res://.godot/imported/Road013A_1K-JPG_Roughness.jpg-2cb2e5d762527ea2501d6d753f2b83c8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Road013A_1K-JPG/Road013A_1K-JPG_Roughness.jpg"
-dest_files=["res://.godot/imported/Road013A_1K-JPG_Roughness.jpg-2cb2e5d762527ea2501d6d753f2b83c8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Road013A_1K-JPG_Roughness.jpg-2cb2e5d762527ea2501d6d753f2b83c8.s3tc.ctex", "res://.godot/imported/Road013A_1K-JPG_Roughness.jpg-2cb2e5d762527ea2501d6d753f2b83c8.etc2.ctex"]
 
 [params]
 

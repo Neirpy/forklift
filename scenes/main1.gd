@@ -13,11 +13,11 @@ func _on_area_parcours_body_entered(_body: Node3D) -> void:
 	var current_medal = ""
 	# On détermine la médaille selon la couleur du label
 	if label.label_settings.font_color == Color.GOLD:
-		current_medal = "🥇"
+		current_medal = "Or 🥇"
 	elif label.label_settings.font_color == Color.SILVER:
-		current_medal = "🥈"
+		current_medal = "Argent 🥈"
 	else:
-		current_medal = "🥉"
+		current_medal = "Bronze 🥉"
 	
 	# ON SAUVEGARDE DANS LE SINGLETON avant de changer de scène
 	# On identifie le niveau par son nom de fichier

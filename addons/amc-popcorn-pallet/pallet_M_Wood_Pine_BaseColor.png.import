@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drbm4exp2sqem"
 path.s3tc="res://.godot/imported/pallet_M_Wood_Pine_BaseColor.png-a171c13c12e55ab91c1385ac43b7c6d4.s3tc.ctex"
+path.etc2="res://.godot/imported/pallet_M_Wood_Pine_BaseColor.png-a171c13c12e55ab91c1385ac43b7c6d4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/amc-popcorn-pallet/pallet_M_Wood_Pine_BaseColor.png"
-dest_files=["res://.godot/imported/pallet_M_Wood_Pine_BaseColor.png-a171c13c12e55ab91c1385ac43b7c6d4.s3tc.ctex"]
+dest_files=["res://.godot/imported/pallet_M_Wood_Pine_BaseColor.png-a171c13c12e55ab91c1385ac43b7c6d4.s3tc.ctex", "res://.godot/imported/pallet_M_Wood_Pine_BaseColor.png-a171c13c12e55ab91c1385ac43b7c6d4.etc2.ctex"]
 
 [params]
 

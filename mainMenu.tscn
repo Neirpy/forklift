@@ -20,7 +20,7 @@ sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wked4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_c3jr6"]
 viewport_path = NodePath("SubViewport")
 
 [node name="mainMenu" type="Node3D" unique_id=1402467325]
@@ -52,7 +52,7 @@ transform = Transform3D(-0.9999997, 0, -8.7422734e-08, 0, 1, 0, 8.7422734e-08, 0
 transform = Transform3D(0.26638022, 0.21127892, -0.940426, 1.9162991e-08, 0.9756801, 0.2191991, 0.9638672, -0.05839036, 0.2599019, 17.438862, 2.423236, -2.9053714)
 
 [node name="Sprite3D" parent="forklift" index="11" unique_id=1217210079]
-texture = SubResource("ViewportTexture_wked4")
+texture = SubResource("ViewportTexture_c3jr6")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1507288]
 use_collision = true

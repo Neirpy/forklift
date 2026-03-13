@@ -121,4 +121,6 @@ honk={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 reflections/reflection_atlas/reflection_size=1024
